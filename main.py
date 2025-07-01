@@ -2,6 +2,7 @@
 """
 PyEditor v1.3 – Nano-like editor with JSON config, Pygments syntax highlight,
 Find/Replace (regex), Undo/Redo, Search, Mouse, Line Numbers, Color theme.
+Author: Bocaletto Luca
 """
 
 import curses, curses.ascii, sys, os, json, pathlib, re
