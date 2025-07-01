@@ -1,0 +1,21 @@
+// ~/.pyeditor.json
+{
+  "keybindings": {
+    "save": 19,          // Ctrl+S
+    "quit": 17,          // Ctrl+Q
+    "undo": 26,          // Ctrl+Z
+    "redo": 25,          // Ctrl+Y
+    "search": 6,         // Ctrl+F
+    "replace": 18        // Ctrl+R
+  },
+  "syntax": {
+    "lexer": "python"    // modifica in "javascript","html", ecc.
+  },
+  "theme": {
+    "status_bg": "cyan",
+    "status_fg": "black",
+    "keyword":   "yellow",
+    "string":    "green",
+    "comment":   "blue"
+  }
+}
