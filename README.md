@@ -1,6 +1,7 @@
-# PyEditor v0.9
+# PyEditor v1.0.0
+#### Author: Bocaletto Luca
 
-PyEditor is a modern terminal-based text editor implemented in Python, designed to marry the familiar simplicity of Nano with powerful, IDE-style features—all within a console. It uses the curses library for efficient screen management and Pygments for real-time syntax highlighting across any language supported by its lexers. Users benefit from a JSON configuration file that allows full customization of keybindings (save, quit, undo, redo, search, replace) and the color theme for status bars and token types. Core editing facilities include undo/redo stacks, interactive incremental search (Ctrl+F), regex-powered find & replace (Ctrl+R), dynamic line numbering, mouse-driven cursor placement, and a colorized status bar displaying file name, modified state, cursor coordinates, and shortcut reminders. All operations function without any GUI dependency, making PyEditor ideal for remote SSH sessions, lightweight container environments, or local development on headless systems. With minimal startup overhead and a clean, extensible codebase, PyEditor provides a streamlined yet feature-rich editing experience.  
+PyEditor is a modern, terminal-based text editor in Python that blends Nano’s simplicity with IDE-style features. It uses `curses` for fast screen updates, Pygments for real-time syntax highlighting, and a JSON config file for full customization of keybindings (save, quit, undo, redo, search, replace) and color themes. Core editing features include undo/redo stacks, incremental search (Ctrl+F), regex find & replace (Ctrl+R), dynamic line numbering, mouse-driven cursor placement, and a colorized status bar showing file name, modified flag, cursor position, and shortcut hints. It runs entirely in the console—ideal for SSH sessions, containers, or headless environments.
 
 ---
 
@@ -21,37 +22,67 @@ PyEditor is a modern terminal-based text editor implemented in Python, designed 
 
 ## Overview
 
-PyEditor is a lightweight, terminal-based text editor that combines Nano’s straightforward interface with next-generation enhancements. It operates entirely within a Unix-style terminal (Linux, macOS, WSL) and requires no GUI.
+PyEditor operates entirely within a Unix-style terminal (Linux, macOS, WSL) and requires no GUI. Its lightweight codebase and minimal startup time make it perfect for quick edits in any shell environment.
 
 ---
 
 ## Features
 
-- Nano-inspired simplicity with advanced enhancements  
-- Undo/Redo (Ctrl+Z / Ctrl+Y) and unlimited history snapshots  
-- Incremental search (Ctrl+F) and regex find & replace (Ctrl+R)  
-- Real-time syntax highlighting via Pygments lexers  
-- Dynamic line numbers and smooth viewport scrolling  
-- Mouse-click cursor positioning for quick navigation  
-- Colorized status bar showing file name, modified flag, cursor position, and key hints  
-- Fully customizable keybindings and color themes through JSON  
+- Undo/Redo (Ctrl+Z / Ctrl+Y)  
+- Incremental search (Ctrl+F) and regex-powered find & replace (Ctrl+R)  
+- Real-time syntax highlighting via Pygments  
+- Dynamic line numbers and smooth scrolling  
+- Mouse-click cursor positioning  
+- Colorized status bar with modified-file indicator (*)  
+- Fully customizable keybindings and theme via JSON  
 
 ---
 
 ## Prerequisites
 
-- Python 3.6 or newer  
-- Unix-style terminal supporting the `curses` module  
-- Pygments library (`pip install pygments`)  
+- **Python** 3.6 or newer  
+- Unix-style terminal with `curses` support  
+- **Pygments** library  
+  - Debian/Ubuntu:  
+    ```bash
+    sudo apt update
+    sudo apt install python3-pygments
+    ```  
+  - Or in a virtual environment:  
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install pygments
+    ```  
 
 ---
 
 ## Installation
 
+Clone the repository and prepare dependencies:
+
 ```bash
 git clone https://github.com/bocaletto-luca/PyEditor.git
 cd PyEditor
-pip install pygments
+```
+
+Choose one of:
+
+1. **System install of Pygments** (Debian/Ubuntu):  
+   ```bash
+   sudo apt install python3-pygments
+   ```
+
+2. **Virtual environment** (any Linux/macOS):  
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install pygments
+   ```
+
+Finally make the script executable:
+
+```bash
 chmod +x pyeditor.py
 ```
 
@@ -63,8 +94,8 @@ chmod +x pyeditor.py
 ./pyeditor.py [optional_filename]
 ```
 
-- Launch with a filename to open it, or start on a blank buffer.  
-- Use Ctrl+S to save, Ctrl+Q to quit.
+- Launch with a filename to edit that file, or omit to start with an empty buffer.  
+- Press Ctrl+S to save, Ctrl+Q to quit.
 
 ---
 
@@ -74,8 +105,8 @@ chmod +x pyeditor.py
 |--------------|-------------------------------------------|
 | Arrow Keys   | Move cursor                              |
 | Backspace    | Delete character                         |
-| Enter        | New line                                 |
-| Ctrl + S     | Save file (Save As if unnamed)           |
+| Enter        | Insert new line                          |
+| Ctrl + S     | Save (Save As if unnamed)                |
 | Ctrl + Q     | Quit editor                              |
 | Ctrl + Z / Y | Undo / Redo                              |
 | Ctrl + F     | Search                                   |
@@ -86,31 +117,47 @@ chmod +x pyeditor.py
 
 ## Configuration
 
-Create `~/.pyeditor.json` to override defaults:
+Create or edit `~/.pyeditor.json` to override defaults:
 
 ```json
 {
   "keybindings": {
-    "save": 19, "quit": 17, "undo": 26, "redo": 25,
-    "search": 6, "replace": 18
+    "save": 19,
+    "quit": 17,
+    "undo": 26,
+    "redo": 25,
+    "search": 6,
+    "replace": 18
   },
-  "syntax": { "lexer": "python" },
+  "syntax": {
+    "lexer": "python"
+  },
   "theme": {
-    "status_bg": "cyan", "status_fg": "black",
-    "keyword": "yellow", "string": "green", "comment": "blue"
+    "status_bg": "cyan",
+    "status_fg": "black",
+    "keyword": "yellow",
+    "string": "green",
+    "comment": "blue"
   }
 }
 ```
 
-- **keybindings**: ASCII codes for commands  
-- **syntax.lexer**: Pygments lexer name  
-- **theme**: Curses colors for status bar and token types  
+- **keybindings**: ASCII codes for each command  
+- **syntax.lexer**: name of a Pygments lexer (e.g., `python`, `javascript`)  
+- **theme**: curses-compatible color names for status bar and token types  
 
 ---
 
 ## Contributing
 
-Bug reports, feature requests, and pull requests are welcome! Please fork the repository, follow PEP 8 coding style, and include tests or examples when appropriate.
+Bug reports, feature requests, and pull requests are welcome!  
+
+1. Fork the repository  
+2. Create a feature branch (`git checkout -b feat/awesome`)  
+3. Commit your changes with clear messages  
+4. Open a pull request  
+
+Please follow [PEP 8](https://peps.python.org/pep-0008/) style and include tests or examples for new features.
 
 ---
 
